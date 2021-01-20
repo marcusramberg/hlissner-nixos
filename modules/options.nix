@@ -30,7 +30,7 @@ with lib.my;
       isNormalUser = true;
       name = let name = builtins.getEnv "USER"; in
              if elem name [ "" "root" ]
-             then "hlissner" else name;
+             then "marcus" else name;
       uid = 1000;
     };
 
@@ -44,9 +44,9 @@ with lib.my;
       # files easily to my $HOME, but 'home-manager.users.hlissner.home.file.*'
       # is much too long and harder to maintain, so I've made aliases in:
       #
-      #   home.file        ->  home-manager.users.hlissner.home.file
-      #   home.configFile  ->  home-manager.users.hlissner.home.xdg.configFile
-      #   home.dataFile    ->  home-manager.users.hlissner.home.xdg.dataFile
+      #   home.file        ->  home-manager.users.marcus.home.file
+      #   home.configFile  ->  home-manager.users.marcus.home.xdg.configFile
+      #   home.dataFile    ->  home-manager.users.marcus.home.xdg.dataFile
       users.${config.user.name} = {
         home = {
           file = mkAliasDefinitions options.home.file;
